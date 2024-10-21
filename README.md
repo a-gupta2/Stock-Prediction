@@ -1,72 +1,83 @@
-# Advice Log Analyzer
+# Stock Prediction Analysis
 
 ## Overview
 
-The Log Analyzer is a web application built with Streamlit that allows users to upload CSV or Excel files containing GRAFANA log data. The application processes the logs, computes daily statistics, and visualizes the data using interactive Plotly charts. Users can also download the visualizations as HTML files for offline viewing.
+Stock Prediction Analysis is a project that uses machine learning techniques to predict stock prices. The project includes data collection, data preprocessing, model training, and evaluation steps, all implemented in Python.
 
 ## Features
 
-- **File Upload**: Upload multiple CSV or Excel files.
-- **Data Processing**: Automatically computes average and maximum response times, total requests, and request distributions.
-- **Interactive Charts**: Visualize log data using Plotly charts that allow hover information and detailed statistics.
-- **HTML Export**: Save visualizations as HTML files for download.
+- **Data Collection**: Fetch historical stock price data.
+- **Data Preprocessing**: Clean and prepare the data for model training.
+- **Model Training**: Train machine learning models to predict future stock prices.
+- **Evaluation**: Evaluate model performance using various metrics.
 
 ## Requirements
 
 - Python 3.7 or higher
-- Streamlit
 - Pandas
-- Plotly
+- Scikit-learn
+- TensorFlow (optional, for deep learning models)
+- Matplotlib (for data visualization)
 
 ## Installation
 
-1. **Clone the repository** (if applicable):
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/Intelliflo/Advice.LogAnalyzer
-   
-2. **Create a virtual environment:**
+   git clone https://github.com/a-gupta2/Stock-Prediction
+   cd Stock-Prediction
+Create a virtual environment:
 
-- bash
-- Copy code
-- python -m venv venv
-- source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-- Install the required packages:
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+Install dependencies:
 
-- bash
-- Copy code
-- pip install streamlit pandas plotly
-- Usage
-- Run the application:
+pip install -r requirements.txt
+**Usage**
+Run the data collection script:
 
+python data_collection.py
+Run the preprocessing script:
 
-## Usage
+python preprocessing.py
+**Train the model:**
 
-1. **Run the Application**:
-   Open your terminal or command prompt and navigate to the directory where your application is located. Run the following command:
+python train_model.py
+**Evaluate the model:**
+
+python evaluate_model.py
+
+# Stock Prediction Analysis
+
+## Overview
+
+Stock Prediction Analysis is a project that uses machine learning techniques to predict stock prices. The project includes data collection, data preprocessing, model training, and evaluation steps, all implemented in Python.
+
+## Features
+
+- **Data Collection**: Fetch historical stock price data.
+- **Data Preprocessing**: Clean and prepare the data for model training.
+- **Model Training**: Train machine learning models to predict future stock prices.
+- **Evaluation**: Evaluate model performance using various metrics.
+
+## Requirements
+
+- Python 3.7 or higher
+- Pandas
+- Scikit-learn
+- TensorFlow (optional, for deep learning models)
+- Matplotlib (for data visualization)
+****
+## Installation
+
+1. **Clone the repository**:
    ```bash
-   streamlit run web.py
+   git clone https://github.com/a-gupta2/Stock-Prediction
+   cd Stock-Prediction
+   ```
+Ensure you have the necessary API keys for data collection if required.
+Modify the configuration files as needed to suit your specific requirements.
 
-### 1. Run the Application
-
-### 2. Upload Log Files
-
-### 3. Select Files for Analysis
-
-### 4. View the Charts
-
-### 5. Download the Charts
-
-### 6. Refresh the Data
-
-
-## Run the docker container
-```bash
-docker build -t log-analyzer .
-docker run -p 8501:8501 log-analyzer
-
-### Access the Application
-Open your web browser and navigate to http://localhost:8501 to access the Log Analyzer application.
-
-
-
-**Note:** app.py is not a web application is the another way to generate dashboard in html format reading the data from 'Data/Inputs folder/'
+You can follow these steps to commit the changes:
+1. Edit the `README.md` file in your repository.
+2. Replace the existing content with the new content above.
+3. Commit the changes.
