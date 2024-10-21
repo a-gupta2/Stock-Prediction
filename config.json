@@ -1,0 +1,6 @@
+{
+  "news_api_key": "9e6b5f9cafce460ba8080fa370331991",
+  "news_url": "https://newsapi.org/v2/everything",
+   "start_date": "1996-01-01",
+   "get_stocks_url": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
+}

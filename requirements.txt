@@ -1,0 +1,7 @@
+streamlit
+yfinance
+statsmodels
+vaderSentiment
+plotly.graph_objs
+pandas
+numpy

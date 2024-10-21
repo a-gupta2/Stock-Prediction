@@ -1,0 +1,94 @@
+	
+1 Different Models to do stock prediction
+  ARIMA
+  
+
+2. Stocks_forecast
+ 
+  > Holt Winters Exponential Smoothing method is used to predict stock price.
+  > Create a foreacasting model-
+
+    model = ExponentialSmoothing(df['Close'], trend='add', seasonal='add', seasonal_periods=252)
+    fit = model.fit()
+    forecast = fit.forecast(steps=252)
+	
+	1. Extract the closing price in a data frame of the stock of each day which is passed as a paramter
+	2. trend- assumes the increase/decrease in stock price 
+	   seasonal- repeating pattern like annual fluctuation
+	   seasonal_periods=252 trading days in a year
+	   
+	3. Fit the model-
+	4. Forecast
+	
+ > Model learns from the past stock price and predict the stock value for next 252 trading days.
+	
+	
+		
+3. Sentiment Analysis:
+
+    The analyze_sentiment function analyzes the titles of the news articles and returns sentiment scores which lies between 0 & 1	
+	
+	News	neg		neu		pos		compound
+	0		0.000	0.524	0.476	0.8519
+	1		0.465	0.535	0.000	-0.7003
+	2		0.000	0.543	0.457	0.7515
+
+	-------
+	
+	1. Compound calculation: A composite score that summarizes overall sentiment.
+    	pos- neg/ Sqrt(pos*pos +neg*neg +neu*neu)
+	   
+   	   
+	2. Calculate- 
+	    Sentiment_Score= Mean(compound) 
+	
+    3. Recommendation can calculated- 
+	   
+	    Sentiment Score    Recommendation  Company
+		-1 to -0.3         Sell   
+		-0.3 to 0.3        Hold            Morgan Stanley, United Parcel
+		0.3 to 1           Buy             Apple, MSFT, Tesla
+	   
+	 
+	 Example-
+     	 
+	 Hold- 
+	 Buy- Tesla, Adobe, Morgan Stanley
+		
+4. Indicators
+   > SMA- Mean(20 days)
+   
+   > Upper band= SMA + STD *2
+   > Lower band= SMA - STD *2
+     STD- Standard Deduction(20 days
+   
+   > RSI= 100- (100/(1+rs)
+     avg_gain= Mean(14days)
+	 avg_loss= Mean(14 days)
+     rs= avg_gain/avg_loss
+ 
+ 
+5. Difference between LSTM & ExponentialSmoothing
+    
+						Feature	LSTM										Exponential Smoothing
+Model Complexity		Deep learning model, captures complex patterns		Simple statistical method, focuses on trends and seasonality
+Data Requirements		Requires large datasets for effective training		Works well with smaller datasets
+Forecasting Approach	Learns from data, adapts to new patterns			Uses predefined formulas based on historical data
+Interpretability		Often a "black box," hard to interpret				More transparent and easier to interpret
+Performance				Better for volatile stocks with complex patterns	Good for stable trends, may struggle with high volatility
+ 
+   
+		
+6. Accuracy- 83% (LSTM)
+   Root Mean squared error- 0.17
+   
+     
+
+7. Challenges
+   1. Python integration
+   2. High volumes of inconsistent data
+   3. Model Accuracy-
+   4. Market changes
+   
+ 
+   
